@@ -18,7 +18,7 @@ class ScrabbleBoard:
 		lines = filter(lambda x: len(x) != 0 and x[0] != '#', open(board_file).read().split('\n'))
 		self.board = filter(lambda x: x.find(':') == -1, lines)
 		self.pieces = dict([map(lambda y: y.strip(), x.split(':')) for x in filter(lambda x: x.find(':') != -1, lines)])
-		for key in self.pieces.keys():
+		for key in self.pieces:
 			self.pieces[key] = self.pieces[key].split('x')
 
 	def get_square(self, x, y):
